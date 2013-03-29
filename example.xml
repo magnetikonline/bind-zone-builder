@@ -1,0 +1,26 @@
+<zonelist>
+	<domain name="domain01.com" admin="dns@domainadmin.com" ttl="1D" refresh="8H" retry="2H" expire="1W" negttl="60M">
+		<record type="NS" value="ns1.domain01.com." />
+		<record type="NS" value="ns2.domain01.com." />
+		<record type="A" value="123.255.255.123" ttl="600" />
+		<record type="A" domain="subdomain01" ttl="4H" value="123.255.255.255" />
+		<record type="CNAME" domain="www" value="domain01.com." />
+		<record type="MX" priority="10" value="mail1.server.com." />
+		<record type="MX" priority="20" value="mail2.server.com." />
+		<record type="MX" priority="30" value="mail3.server.com." />
+		<record type="SPF" value="123.255.255.123,_spf.google.com" />
+		<record type="TXT" value="This is a text record" />
+	</domain>
+
+	<domain name="domain02.com" admin="dns@domainadmin.com" ttl="1D" refresh="8H" retry="2H" expire="1W" negttl="60M">
+		<record type="NS" value="ns1.domain02.com." />
+		<record type="NS" value="ns2.domain02.com." />
+		<record type="MX" priority="10" value="mail1.server.com." />
+		<record type="SPF" value="123.255.255.123,_spf.google.com[~]" />
+		<!--
+		Other valid SPF tail 'all' modifiers allowed are [+], [?], [-]
+		Refer to: http://en.wikipedia.org/wiki/Sender_Policy_Framework#Qualifiers
+		Default if not specified is '?all'
+		-->
+	</domain>
+</zonelist>
