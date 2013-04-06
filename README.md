@@ -12,7 +12,7 @@ Support for the following record types:
 - **SPF** - provides a (very) simple SPF record builder - for anything more advanced a TXT record can be used
 - **TXT**
 
-Time/expiry can be formatted in seconds or the standard BIND units of weeks, days, hours, minutes. TTL's can be set for individual records as well, see [Configuration XML format](#configuration-xml-format) below.
+Time units where required/allowed can be given either in seconds or the standard BIND units of weeks, days, hours, minutes. TTL's can be set for individual records as well, see [Configuration XML format](#configuration-xml-format) below for an example.
 
 ## Requires
 - PHP 5.4
@@ -58,7 +58,7 @@ An example XML config and output zone files, also refer to [example.xml](example
 </zonelist>
 ```
 
-### /output/dir/db.domain01.com
+### /output/db.domain01.com
 
 	$TTL 1D
 	@ IN SOA ns1.domain01.com. dns.domainadmin.com. (
@@ -84,7 +84,7 @@ An example XML config and output zone files, also refer to [example.xml](example
 
 	@						TXT			"This is a text record"
 
-### /output/dir/db.domain02.com
+### /output/db.domain02.com
 
 	$TTL 1D
 	@ IN SOA ns1.domain02.com. dns.domainadmin.com. (
