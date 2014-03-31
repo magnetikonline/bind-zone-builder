@@ -398,7 +398,7 @@ class BindZoneBuilder {
 	private function isValidIPv4Address($IPv4Address) {
 
 		$partList = explode('.',$IPv4Address);
-		if (sizeof($partList) != 4) return false;
+		if (count($partList) != 4) return false;
 
 		foreach ($partList as $number) {
 			if (
